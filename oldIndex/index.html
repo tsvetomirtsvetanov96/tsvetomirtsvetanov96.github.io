@@ -144,13 +144,30 @@
             <div class="contact-detail-box">
               <i class="fa fa-map-marker fa-2x"></i>
               <h4>Адрес</h4>
-              <a>Монтана</a>
+              <a target="_blank" href="https://www.google.com/maps/place/CK-Team+SERVICE/@43.45961,23.185153,15z/data=!4m5!3m4!1s0x0:0x79ba38de014d6c6c!8m2!3d43.45961!4d23.185153">Студено Буче, Монтана</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-   
+    <!--Map-->
+    <div id="map" style="width:100%;height:350px;"></div>
+    <script>
+      function myMap() {
+            var myCenter = new google.maps.LatLng(43.4596406,23.1852156);
+            var mapCanvas = document.getElementById("map");
+            var mapOptions = {center: myCenter, zoom: 15};
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({
+              position: myCenter,
+              animation: google.maps.Animation.BOUNCE
+      
+            });
+            marker.setMap(map);
+      map.setMapTypeId(google.maps.MapTypeId.TERRAIN); 
+          }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIh2a9lhFTn6E1wpx5JEg9JqSb-sFJUak&callback=myMap"></script>
     <!--Footer-->
     <footer>
       <div class="footer-copyright text-center py-3 bg-dark">2020 © Разработен от<a href="mailto:ceco@ck-teamservice.eu"> Цц</a></div>
